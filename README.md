@@ -2,6 +2,12 @@
 
 Budget-aware task approval for agentic systems. `requireFinanceApproval()` calls a “Finance Agent” (LLM + governance prompt) to approve/reject work based on your budgets, spend, and runway—using pluggable adapters so you can bring your own database and LLM provider.
 
+## History
+
+At the start of 2026 I ran an experiment to see how AI would approach running a business. I put up some constraints and prompted, but let the AI take as many decisions as possible. Part of the constraint set was a requirement for fiscal responsibility. The AI came up with a finance approval process, whereby agent requests would need to ask for permission to do something based on estimated token usage and the available budget. This evolved into a tiered model, whereby the AI could delegate sub-tasks to different tiers of model, depending on the nature of the task and how much budget is available. It worked pretty well. It wasn't really necessary, as the cost of what the AI was doing was extremely low and it never got close to spending the budget. (It did have cashflow issues, as it was running against a PAYG API key without auto-top-up, which is another story).
+
+So this is published as a real implementation of an experiment that was successful. It may be useful to consider in an orchestrated workflow. Conscious of the bitter lesson, but that's really about solving difficult problems, where this is about cost-effective use of LLMs in automated workflows.
+
 ## Install
 
 This is intended to be published (see Issues) and is not yet done
