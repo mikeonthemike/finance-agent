@@ -4,6 +4,8 @@ Budget-aware task approval for agentic systems. `requireFinanceApproval()` calls
 
 ## Install
 
+This is intended to be published (see Issues) and is not yet done
+
 ```bash
 npm i @mikeonthemike/finance-agent
 ```
