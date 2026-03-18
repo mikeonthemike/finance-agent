@@ -1,0 +1,50 @@
+{
+  "name": "@mikeonthemike/finance-agent",
+  "version": "0.1.0",
+  "description": "Finance Agent - budget-aware task approval with pluggable data and LLM adapters",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./supabase": {
+      "types": "./dist/adapters/supabaseDataAdapter.d.ts",
+      "import": "./dist/adapters/supabaseDataAdapter.js"
+    },
+    "./openai": {
+      "types": "./dist/adapters/openaiLLMAdapter.d.ts",
+      "import": "./dist/adapters/openaiLLMAdapter.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "openai": "^4.28.0"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.46.2"
+  },
+  "peerDependenciesMeta": {
+    "@supabase/supabase-js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5"
+  },
+  "files": [
+    "dist",
+    "src",
+    "governance"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
